@@ -1,4 +1,4 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,7 +25,26 @@
     }
 
     body {
+      background: #090b10;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       MAIN PAGE
+       ========================= */
+
+    .page {
+      position: relative;
       min-height: 100vh;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
       background:
         radial-gradient(
           circle at 50% 25%,
@@ -34,29 +53,12 @@
         ),
         #090b10;
 
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-
-      overflow-x: hidden;
-    }
-
-
-    /* MAIN PAGE */
-
-    .page {
-      position: relative;
-      min-height: 100vh;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
       overflow: hidden;
     }
 
-
-    /* CONTENT */
+    /* =========================
+       MAIN CONTENT
+       ========================= */
 
     .content {
       position: relative;
@@ -65,286 +67,66 @@
       width: 100%;
       max-width: 800px;
 
-      padding: 55px 25px 260px;
+      padding: 50px 24px 300px;
     }
 
-
-    /* LOGO */
+    /* =========================
+       LOGO
+       ========================= */
 
     .logo {
       display: block;
 
-      width: min(380px, 72vw);
+      width: min(360px, 70vw);
       height: auto;
 
-      margin: 0 auto 24px;
+      margin: 0 auto 22px;
     }
 
-
-    /* BRAND NAME */
+    /* =========================
+       NABZAP NAME
+       ========================= */
 
     .brand {
-      font-size: clamp(3.2rem, 11vw, 6.5rem);
+      font-size: clamp(3.2rem, 11vw, 6rem);
       font-weight: 800;
+
       letter-spacing: -3px;
       line-height: 1;
     }
 
-    .brand .nab {
+    .nab {
       color: #ffffff;
     }
 
-    .brand .zap {
+    .zap {
       color: #d9a63c;
     }
 
-
-    /* TAGLINE */
+    /* =========================
+       TAGLINE
+       ========================= */
 
     .tagline {
-      margin-top: 30px;
+      margin-top: 28px;
 
       font-size: clamp(1.35rem, 4.5vw, 2rem);
       font-weight: 700;
+
       letter-spacing: 0.5px;
     }
 
-
-    /* MESSAGE */
+    /* =========================
+       DESCRIPTION
+       ========================= */
 
     .message {
-      margin: 22px auto 0;
-
       max-width: 620px;
+
+      margin: 20px auto 0;
 
       color: #aeb4c0;
 
       font-size: clamp(1rem, 3.5vw, 1.2rem);
-      line-height: 1.7;
-    }
 
-
-    /* VALUES */
-
-    .values {
-      margin-top: 30px;
-
-      color: #d9a63c;
-
-      font-size: clamp(0.68rem, 2.6vw, 0.88rem);
-      font-weight: 700;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-    }
-
-    .dot {
-      color: #6f7888;
-      padding: 0 10px;
-    }
-
-
-    /* COMING SOON */
-
-    .coming {
-      display: inline-block;
-
-      margin-top: 38px;
-
-      padding: 14px 32px;
-
-      border: 1px solid rgba(217, 166, 60, 0.65);
-      border-radius: 50px;
-
-      color: #d9a63c;
-
-      font-size: 0.8rem;
-      font-weight: 700;
-
-      letter-spacing: 5px;
-    }
-
-
-    /* EARTH HORIZON */
-
-    .horizon {
-      position: absolute;
-
-      left: 50%;
-      bottom: 0;
-
-      transform: translateX(-50%);
-
-      width: 100%;
-      min-width: 900px;
-
-      height: auto;
-
-      z-index: 1;
-
-      pointer-events: none;
-
-      /* Helps the image disappear into the page */
-      -webkit-mask-image:
-        linear-gradient(
-          to bottom,
-          transparent 0%,
-          black 20%,
-          black 100%
-        );
-
-      mask-image:
-        linear-gradient(
-          to bottom,
-          transparent 0%,
-          black 20%,
-          black 100%
-        );
-    }
-
-
-    /* FOOTER */
-
-    .footer {
-      position: absolute;
-
-      bottom: 22px;
-      left: 0;
-
-      width: 100%;
-
-      z-index: 4;
-
-      color: #7b8290;
-
-      font-size: 0.75rem;
-
-      letter-spacing: 2px;
-    }
-
-
-    /* MOBILE */
-
-    @media (max-width: 600px) {
-
-      .content {
-        padding-top: 42px;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 230px;
-      }
-
-      .logo {
-        width: 68vw;
-        max-width: 300px;
-        margin-bottom: 20px;
-      }
-
-      .brand {
-        letter-spacing: -2px;
-      }
-
-      .tagline {
-        margin-top: 24px;
-      }
-
-      .message {
-        margin-top: 18px;
-      }
-
-      .values {
-        margin-top: 26px;
-        letter-spacing: 1.5px;
-      }
-
-      .dot {
-        padding: 0 5px;
-      }
-
-      .coming {
-        margin-top: 32px;
-        padding: 13px 26px;
-      }
-
-      .horizon {
-        width: auto;
-        height: 240px;
-        min-width: 0;
-      }
-
-    }
-
-  </style>
-</head>
-
-
-<body>
-
-  <main class="page">
-
-    <div class="content">
-
-      <!-- NABZAP LOGO -->
-      <img
-        src="Logo.png"
-        class="logo"
-        alt="NabZap logo"
-      >
-
-
-      <!-- COMPANY NAME -->
-      <div class="brand">
-        <span class="nab">Nab</span><span class="zap">Zap</span>
-      </div>
-
-
-      <!-- TAGLINE -->
-      <div class="tagline">
-        Opportunities. Fast action.
-      </div>
-
-
-      <!-- DESCRIPTION -->
-      <div class="message">
-        We spot opportunities, act decisively,
-        and build for lasting value.
-      </div>
-
-
-      <!-- VALUES -->
-      <div class="values">
-        SMART SOURCING
-        <span class="dot">•</span>
-        FAST ACTION
-        <span class="dot">•</span>
-        LASTING VALUE
-      </div>
-
-
-      <!-- COMING SOON -->
-      <div class="coming">
-        COMING SOON
-      </div>
-
-    </div>
-
-
-    <!-- EARTH HORIZON -->
-    <img
-      src="hz.png"
-      class="horizon"
-      alt=""
-    >
-
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      © 2026 NABZAP LLC
-    </footer>
-
-  </main>
-
-</body>
-
-</html>
+      line-height: 1.7
