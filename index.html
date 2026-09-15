@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NABZAP | Coming Soon</title>
-  <meta name="description" content="NABZAP — Something exciting is on the way.">
+
+  <title>NabZap | Global Opportunities. Fast Action.</title>
+
+  <meta name="description"
+        content="NabZap discovers opportunities, connects markets, and moves with speed.">
 
   <style>
     * {
@@ -15,96 +18,173 @@
 
     body {
       min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 30%,
+          rgba(27, 68, 120, 0.20),
+          transparent 38%),
+        radial-gradient(circle at 50% 100%,
+          rgba(185, 135, 50, 0.10),
+          transparent 35%),
+        #060a10;
+
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255, 122, 0, 0.12), transparent 35%),
-        radial-gradient(circle at 80% 80%, rgba(255, 190, 60, 0.08), transparent 35%),
-        #090b10;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-      overflow: hidden;
     }
 
-    .container {
-      padding: 40px 25px;
+    .page {
+      width: 100%;
       max-width: 900px;
+      padding: 45px 24px 35px;
+    }
+
+    .logo {
+      width: min(250px, 58vw);
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 20px;
     }
 
     .brand {
-      font-size: clamp(4rem, 12vw, 8rem);
-      font-weight: 900;
-      letter-spacing: -5px;
-      line-height: 0.9;
+      font-size: clamp(2.8rem, 10vw, 5.5rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1;
     }
 
-    .brand span {
-      color: #ff7a00;
+    .brand .nab {
+      color: #ffffff;
+    }
+
+    .brand .zap {
+      color: #d4a33d;
     }
 
     .tagline {
-      margin-top: 30px;
-      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      margin-top: 22px;
+      font-size: clamp(1.25rem, 4vw, 2rem);
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 0.02em;
     }
 
     .message {
-      margin: 22px auto 0;
-      max-width: 600px;
-      color: #aeb4c0;
-      font-size: 1.05rem;
-      line-height: 1.8;
+      margin: 18px auto 0;
+      max-width: 620px;
+      color: #aeb8c6;
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      line-height: 1.7;
+    }
+
+    .values {
+      margin: 35px auto 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+
+      color: #d4a33d;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #7d8794;
     }
 
     .coming {
       display: inline-block;
       margin-top: 38px;
-      padding: 12px 24px;
-      border: 1px solid rgba(255,255,255,0.18);
+      padding: 12px 27px;
+
+      border: 1px solid rgba(212, 163, 61, 0.45);
       border-radius: 50px;
-      color: #ff9b3d;
-      font-size: 0.8rem;
+
+      color: #d4a33d;
+      font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 4px;
+      letter-spacing: 0.28em;
     }
 
-    .footer {
-      position: absolute;
-      bottom: 25px;
-      left: 0;
-      width: 100%;
-      color: #555c68;
-      font-size: 0.75rem;
-      letter-spacing: 1px;
+    footer {
+      margin-top: 55px;
+      color: #5f6875;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 500px) {
+      .page {
+        padding-top: 30px;
+      }
+
+      .logo {
+        width: min(210px, 55vw);
+      }
+
+      .values {
+        gap: 10px;
+        font-size: 0.67rem;
+        letter-spacing: 0.10em;
+      }
+
+      footer {
+        margin-top: 45px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <main class="container">
-    <div class="brand">NAB<span>ZAP</span></div>
+  <main class="page">
+
+    <img
+      src="Logo.png"
+      alt="NabZap global logo"
+      class="logo"
+    >
+
+    <div class="brand">
+      <span class="nab">Nab</span><span class="zap">Zap</span>
+    </div>
 
     <div class="tagline">
-      Something exciting is on the way.
+      Global opportunities. Fast action.
     </div>
 
     <div class="message">
-      We spot opportunities. We move fast.<br>
-      And we're just getting started.
+      We discover opportunities, connect markets,<br>
+      and move with speed.
+    </div>
+
+    <div class="values">
+      <span>Global Reach</span>
+      <span class="dot"></span>
+      <span>Fast Action</span>
+      <span class="dot"></span>
+      <span>Lasting Value</span>
     </div>
 
     <div class="coming">
       COMING SOON
     </div>
-  </main>
 
-  <footer class="footer">
-    © 2026 NABZAP
-  </footer>
+    <footer>
+      © 2026 NabZap LLC
+    </footer>
+
+  </main>
 
 </body>
 </html>
