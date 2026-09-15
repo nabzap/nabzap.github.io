@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
         content="NabZap — Discovering opportunities and moving with speed.">
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -21,44 +19,32 @@
     html,
     body {
       width: 100%;
-      min-height: 100%;
+      height: 100%;
+      background: #090b10;
     }
 
     body {
-      background: #090b10;
       color: white;
       font-family: Arial, Helvetica, sans-serif;
       text-align: center;
       overflow-x: hidden;
     }
 
-    /* =========================
-       MAIN PAGE
-       ========================= */
-
     .page {
       position: relative;
-      min-height: 100vh;
       width: 100%;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      min-height: 100vh;
+      min-height: 100svh;
+      overflow: hidden;
 
       background:
         radial-gradient(
-          circle at 50% 25%,
+          circle at 50% 22%,
           rgba(15, 55, 85, 0.22),
           transparent 42%
         ),
         #090b10;
-
-      overflow: hidden;
     }
-
-    /* =========================
-       MAIN CONTENT
-       ========================= */
 
     .content {
       position: relative;
@@ -67,30 +53,22 @@
       width: 100%;
       max-width: 800px;
 
-      padding: 50px 24px 300px;
+      margin: 0 auto;
+      padding: 45px 24px 300px;
     }
-
-    /* =========================
-       LOGO
-       ========================= */
 
     .logo {
       display: block;
 
-      width: min(360px, 70vw);
+      width: min(350px, 68vw);
       height: auto;
 
-      margin: 0 auto 22px;
+      margin: 0 auto 18px;
     }
-
-    /* =========================
-       NABZAP NAME
-       ========================= */
 
     .brand {
       font-size: clamp(3.2rem, 11vw, 6rem);
       font-weight: 800;
-
       letter-spacing: -3px;
       line-height: 1;
     }
@@ -103,41 +81,28 @@
       color: #d9a63c;
     }
 
-    /* =========================
-       TAGLINE
-       ========================= */
-
     .tagline {
-      margin-top: 28px;
+      margin-top: 25px;
 
-      font-size: clamp(1.35rem, 4.5vw, 2rem);
+      font-size: clamp(1.3rem, 4.5vw, 2rem);
       font-weight: 700;
 
       letter-spacing: 0.5px;
     }
 
-    /* =========================
-       DESCRIPTION
-       ========================= */
-
     .message {
       max-width: 620px;
 
-      margin: 20px auto 0;
+      margin: 18px auto 0;
 
       color: #aeb4c0;
 
       font-size: clamp(1rem, 3.5vw, 1.2rem);
-
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
-    /* =========================
-       VALUES
-       ========================= */
-
     .values {
-      margin-top: 28px;
+      margin-top: 24px;
 
       color: #d9a63c;
 
@@ -151,22 +116,17 @@
 
     .dot {
       color: #6f7888;
-      padding: 0 9px;
+      padding: 0 8px;
     }
-
-    /* =========================
-       COMING SOON
-       ========================= */
 
     .coming {
       display: inline-block;
 
-      margin-top: 36px;
+      margin-top: 30px;
 
-      padding: 14px 32px;
+      padding: 13px 30px;
 
       border: 1px solid rgba(217, 166, 60, 0.7);
-
       border-radius: 50px;
 
       color: #d9a63c;
@@ -177,232 +137,47 @@
       letter-spacing: 5px;
     }
 
-    /* =========================
-       EARTH HORIZON
-       ========================= */
+    /* EARTH */
 
     .horizon-container {
       position: absolute;
 
       left: 0;
+      right: 0;
       bottom: 0;
 
       width: 100%;
-
-      z-index: 1;
+      height: 250px;
 
       overflow: hidden;
+
+      z-index: 1;
     }
 
     .horizon {
-      display: block;
+      position: absolute;
+
+      left: 50%;
+      bottom: 0;
+
+      transform: translateX(-50%);
 
       width: 100%;
       height: auto;
 
-      margin: 0 auto;
+      min-width: 900px;
     }
-
-    /* =========================
-       FOOTER
-       ========================= */
 
     .footer {
       position: absolute;
 
       left: 0;
-      bottom: 20px;
+      bottom: 14px;
 
       width: 100%;
 
       z-index: 4;
 
-      color: #9aa1ad;
+      color: #8a919d;
 
-      font-size: 0.75rem;
-
-      letter-spacing: 2px;
-    }
-
-    /* =========================
-       MOBILE
-       ========================= */
-
-    @media (max-width: 600px) {
-
-      .page {
-        min-height: 100vh;
-      }
-
-      .content {
-        padding:
-          38px
-          20px
-          250px;
-      }
-
-      .logo {
-        width: 64vw;
-        max-width: 280px;
-
-        margin-bottom: 18px;
-      }
-
-      .brand {
-        font-size: 3.7rem;
-        letter-spacing: -2px;
-      }
-
-      .tagline {
-        margin-top: 22px;
-
-        font-size: 1.35rem;
-      }
-
-      .message {
-        margin-top: 17px;
-
-        font-size: 1rem;
-
-        line-height: 1.65;
-      }
-
-      .values {
-        margin-top: 24px;
-
-        font-size: 0.68rem;
-
-        letter-spacing: 1.3px;
-
-        white-space: nowrap;
-      }
-
-      .dot {
-        padding: 0 4px;
-      }
-
-      .coming {
-        margin-top: 30px;
-
-        padding: 13px 25px;
-
-        font-size: 0.75rem;
-
-        letter-spacing: 4px;
-      }
-
-      /*
-        Make the Earth wider than the phone.
-        This creates the cinematic curved-horizon look.
-      */
-
-      .horizon {
-        position: relative;
-
-        left: 50%;
-
-        width: 170%;
-
-        max-width: none;
-
-        transform: translateX(-50%);
-      }
-
-      .footer {
-        bottom: 16px;
-      }
-    }
-
-  </style>
-</head>
-
-
-<body>
-
-  <main class="page">
-
-
-    <!-- LOGO -->
-
-    <div class="content">
-
-      <img
-        src="Logo.png"
-        class="logo"
-        alt="NabZap logo"
-      >
-
-
-      <!-- NABZAP -->
-
-      <div class="brand">
-        <span class="nab">Nab</span><span class="zap">Zap</span>
-      </div>
-
-
-      <!-- TAGLINE -->
-
-      <div class="tagline">
-        Opportunities. Fast action.
-      </div>
-
-
-      <!-- DESCRIPTION -->
-
-      <div class="message">
-        We spot opportunities, act decisively,
-        and build for lasting value.
-      </div>
-
-
-      <!-- VALUES -->
-
-      <div class="values">
-
-        SMART SOURCING
-
-        <span class="dot">•</span>
-
-        FAST ACTION
-
-        <span class="dot">•</span>
-
-        LASTING VALUE
-
-      </div>
-
-
-      <!-- COMING SOON -->
-
-      <div class="coming">
-        COMING SOON
-      </div>
-
-    </div>
-
-
-    <!-- EARTH HORIZON -->
-
-    <div class="horizon-container">
-
-      <img
-        src="Hz.png"
-        class="horizon"
-        alt=""
-      >
-
-    </div>
-
-
-    <!-- FOOTER -->
-
-    <footer class="footer">
-      © 2026 NABZAP LLC
-    </footer>
-
-
-  </main>
-
-</body>
-
-</html>
+      font-size: 0
