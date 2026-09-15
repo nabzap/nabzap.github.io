@@ -1,58 +1,92 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>NabZap | Global Opportunities. Fast Action.</title>
+  <title>NabZap | Coming Soon</title>
 
   <meta name="description"
-        content="NabZap discovers opportunities, connects markets, and moves with speed.">
+        content="NabZap — Discovering opportunities and moving with speed.">
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
     body {
       min-height: 100vh;
       background:
-        radial-gradient(circle at 50% 30%,
-          rgba(27, 68, 120, 0.20),
-          transparent 38%),
-        radial-gradient(circle at 50% 100%,
-          rgba(185, 135, 50, 0.10),
-          transparent 35%),
-        #060a10;
+        radial-gradient(
+          circle at 50% 25%,
+          rgba(15, 55, 85, 0.22),
+          transparent 42%
+        ),
+        #090b10;
 
-      color: #ffffff;
+      color: white;
       font-family: Arial, Helvetica, sans-serif;
       text-align: center;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow-x: hidden;
     }
+
+
+    /* MAIN PAGE */
 
     .page {
-      width: 100%;
-      max-width: 900px;
-      padding: 45px 24px 35px;
+      position: relative;
+      min-height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      overflow: hidden;
     }
+
+
+    /* CONTENT */
+
+    .content {
+      position: relative;
+      z-index: 3;
+
+      width: 100%;
+      max-width: 800px;
+
+      padding: 55px 25px 260px;
+    }
+
+
+    /* LOGO */
 
     .logo {
-      width: min(250px, 58vw);
+      display: block;
+
+      width: min(380px, 72vw);
       height: auto;
-      border-radius: 50%;
-      margin-bottom: 20px;
+
+      margin: 0 auto 24px;
     }
 
+
+    /* BRAND NAME */
+
     .brand {
-      font-size: clamp(2.8rem, 10vw, 5.5rem);
-      font-weight: 700;
-      letter-spacing: 0.04em;
+      font-size: clamp(3.2rem, 11vw, 6.5rem);
+      font-weight: 800;
+      letter-spacing: -3px;
       line-height: 1;
     }
 
@@ -61,130 +95,256 @@
     }
 
     .brand .zap {
-      color: #d4a33d;
+      color: #d9a63c;
     }
+
+
+    /* TAGLINE */
 
     .tagline {
-      margin-top: 22px;
-      font-size: clamp(1.25rem, 4vw, 2rem);
-      font-weight: 600;
-      letter-spacing: 0.02em;
+      margin-top: 30px;
+
+      font-size: clamp(1.35rem, 4.5vw, 2rem);
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
+
+    /* MESSAGE */
+
     .message {
-      margin: 18px auto 0;
+      margin: 22px auto 0;
+
       max-width: 620px;
-      color: #aeb8c6;
-      font-size: clamp(1rem, 2.5vw, 1.15rem);
+
+      color: #aeb4c0;
+
+      font-size: clamp(1rem, 3.5vw, 1.2rem);
       line-height: 1.7;
     }
 
-    .values {
-      margin: 35px auto 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
 
-      color: #d4a33d;
-      font-size: 0.78rem;
+    /* VALUES */
+
+    .values {
+      margin-top: 30px;
+
+      color: #d9a63c;
+
+      font-size: clamp(0.68rem, 2.6vw, 0.88rem);
       font-weight: 700;
-      letter-spacing: 0.16em;
+
+      letter-spacing: 2px;
+
       text-transform: uppercase;
     }
 
     .dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: #7d8794;
+      color: #6f7888;
+      padding: 0 10px;
     }
+
+
+    /* COMING SOON */
 
     .coming {
       display: inline-block;
-      margin-top: 38px;
-      padding: 12px 27px;
 
-      border: 1px solid rgba(212, 163, 61, 0.45);
+      margin-top: 38px;
+
+      padding: 14px 32px;
+
+      border: 1px solid rgba(217, 166, 60, 0.65);
       border-radius: 50px;
 
-      color: #d4a33d;
-      font-size: 0.76rem;
+      color: #d9a63c;
+
+      font-size: 0.8rem;
       font-weight: 700;
-      letter-spacing: 0.28em;
+
+      letter-spacing: 5px;
     }
 
-    footer {
-      margin-top: 55px;
-      color: #5f6875;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+
+    /* EARTH HORIZON */
+
+    .horizon {
+      position: absolute;
+
+      left: 50%;
+      bottom: 0;
+
+      transform: translateX(-50%);
+
+      width: 100%;
+      min-width: 900px;
+
+      height: auto;
+
+      z-index: 1;
+
+      pointer-events: none;
+
+      /* Helps the image disappear into the page */
+      -webkit-mask-image:
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          black 20%,
+          black 100%
+        );
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          black 20%,
+          black 100%
+        );
     }
 
-    @media (max-width: 500px) {
-      .page {
-        padding-top: 30px;
+
+    /* FOOTER */
+
+    .footer {
+      position: absolute;
+
+      bottom: 22px;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 4;
+
+      color: #7b8290;
+
+      font-size: 0.75rem;
+
+      letter-spacing: 2px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+      .content {
+        padding-top: 42px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 230px;
       }
 
       .logo {
-        width: min(210px, 55vw);
+        width: 68vw;
+        max-width: 300px;
+        margin-bottom: 20px;
+      }
+
+      .brand {
+        letter-spacing: -2px;
+      }
+
+      .tagline {
+        margin-top: 24px;
+      }
+
+      .message {
+        margin-top: 18px;
       }
 
       .values {
-        gap: 10px;
-        font-size: 0.67rem;
-        letter-spacing: 0.10em;
+        margin-top: 26px;
+        letter-spacing: 1.5px;
       }
 
-      footer {
-        margin-top: 45px;
+      .dot {
+        padding: 0 5px;
       }
+
+      .coming {
+        margin-top: 32px;
+        padding: 13px 26px;
+      }
+
+      .horizon {
+        width: auto;
+        height: 240px;
+        min-width: 0;
+      }
+
     }
+
   </style>
 </head>
+
 
 <body>
 
   <main class="page">
 
+    <div class="content">
+
+      <!-- NABZAP LOGO -->
+      <img
+        src="Logo.png"
+        class="logo"
+        alt="NabZap logo"
+      >
+
+
+      <!-- COMPANY NAME -->
+      <div class="brand">
+        <span class="nab">Nab</span><span class="zap">Zap</span>
+      </div>
+
+
+      <!-- TAGLINE -->
+      <div class="tagline">
+        Opportunities. Fast action.
+      </div>
+
+
+      <!-- DESCRIPTION -->
+      <div class="message">
+        We spot opportunities, act decisively,
+        and build for lasting value.
+      </div>
+
+
+      <!-- VALUES -->
+      <div class="values">
+        SMART SOURCING
+        <span class="dot">•</span>
+        FAST ACTION
+        <span class="dot">•</span>
+        LASTING VALUE
+      </div>
+
+
+      <!-- COMING SOON -->
+      <div class="coming">
+        COMING SOON
+      </div>
+
+    </div>
+
+
+    <!-- EARTH HORIZON -->
     <img
-      src="Logo.png"
-      alt="NabZap global logo"
-      class="logo"
+      src="hz.png"
+      class="horizon"
+      alt=""
     >
 
-    <div class="brand">
-      <span class="nab">Nab</span><span class="zap">Zap</span>
-    </div>
 
-    <div class="tagline">
-      Global opportunities. Fast action.
-    </div>
-
-    <div class="message">
-      We discover opportunities, connect markets,<br>
-      and move with speed.
-    </div>
-
-    <div class="values">
-      <span>Global Reach</span>
-      <span class="dot"></span>
-      <span>Fast Action</span>
-      <span class="dot"></span>
-      <span>Lasting Value</span>
-    </div>
-
-    <div class="coming">
-      COMING SOON
-    </div>
-
-    <footer>
-      © 2026 NabZap LLC
+    <!-- FOOTER -->
+    <footer class="footer">
+      © 2026 NABZAP LLC
     </footer>
 
   </main>
 
 </body>
+
 </html>
