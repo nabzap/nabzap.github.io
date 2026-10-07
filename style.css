@@ -174,3 +174,17 @@ footer.site a:first-child { margin-left: 0; }
   .orbit i { animation: none; }
   .btn { transition: none; }
 }
+
+/* Multi-page additions */
+nav.main a[aria-current="page"] { color: var(--gold); }
+h1.page { font-size: clamp(1.8rem, 4.2vw, 3rem); max-width: 20em; }
+.doors { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.door { display: flex; flex-direction: column; padding: 28px; border: 1px solid var(--line-soft); border-radius: 18px; text-decoration: none; color: var(--ice); transition: border-color 0.2s, background 0.2s; }
+.door:hover { border-color: var(--gold); background: rgba(14, 31, 63, 0.5); }
+.door h3 { font-size: 1.05rem; margin-bottom: 10px; }
+.door p { color: var(--mist); font-size: 0.97rem; }
+.door span { margin-top: auto; color: var(--gold); font-weight: 600; font-size: 0.93rem; }
+@media (max-width: 860px) { .doors { grid-template-columns: 1fr; } }
+
+body { min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1; }
