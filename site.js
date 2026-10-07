@@ -17,3 +17,15 @@ if (SETTINGS.phone) {
   link.href = "tel:" + SETTINGS.phone.replace(/[^0-9+]/g, "");
   row.hidden = false;
 }
+
+/* Phone menu */
+document.documentElement.classList.add("js");
+(function () {
+  var header = document.querySelector("header.site");
+  var btn = document.querySelector(".menu-btn");
+  if (!header || !btn) return;
+  btn.addEventListener("click", function () {
+    var open = header.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
