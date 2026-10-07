@@ -1,336 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>NabZap | Coming Soon</title>
-
-  <meta name="description"
-        content="NabZap — Discovering opportunities and moving with speed.">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      background: #090b10;
-    }
-
-    body {
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      text-align: center;
-      overflow-x: hidden;
-    }
-
-    .page {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
-      min-height: 100svh;
-      overflow: hidden;
-
-      background:
-        radial-gradient(
-          circle at 50% 22%,
-          rgba(15, 55, 85, 0.22),
-          transparent 42%
-        ),
-        #090b10;
-    }
-
-    .content {
-      position: relative;
-      z-index: 3;
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 45px 24px 300px;
-    }
-
-    .logo {
-      display: block;
-      width: min(350px, 68vw);
-      height: auto;
-      margin: 0 auto 18px;
-    }
-
-    .brand {
-      font-size: clamp(3.2rem, 11vw, 6rem);
-      font-weight: 800;
-      letter-spacing: -3px;
-      line-height: 1;
-    }
-
-    .nab {
-      color: #ffffff;
-    }
-
-    .zap {
-      color: #d9a63c;
-    }
-
-    .tagline {
-      margin-top: 25px;
-      font-size: clamp(1.3rem, 4.5vw, 2rem);
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-
-    .message {
-      max-width: 620px;
-      margin: 18px auto 0;
-      color: #aeb4c0;
-      font-size: clamp(1rem, 3.5vw, 1.2rem);
-      line-height: 1.6;
-    }
-
-    .values {
-      margin-top: 24px;
-      color: #d9a63c;
-      font-size: clamp(0.68rem, 2.6vw, 0.88rem);
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .dot {
-      color: #6f7888;
-      padding: 0 8px;
-    }
-
-    .coming {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 13px 30px;
-      border: 1px solid rgba(217, 166, 60, 0.7);
-      border-radius: 50px;
-      color: #d9a63c;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 5px;
-    }
-
-    /* EARTH HORIZON */
-
-    .horizon-container {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      height: 250px;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .horizon {
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
-      width: 100%;
-      height: auto;
-      min-width: 900px;
-    }
-
-    .footer {
-      position: absolute;
-      left: 0;
-      bottom: 14px;
-      width: 100%;
-      z-index: 4;
-      color: #8a919d;
-      font-size: 0.7rem;
-      letter-spacing: 2px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 600px) {
-
-      .page {
-        height: 100svh;
-        min-height: 100svh;
-      }
-
-      .content {
-        padding: 24px 18px 0;
-      }
-
-      .logo {
-        width: 48vw;
-        max-width: 210px;
-        margin-bottom: 10px;
-      }
-
-      .brand {
-        font-size: 3.2rem;
-        letter-spacing: -2px;
-      }
-
-      .tagline {
-        margin-top: 18px;
-        font-size: 1.18rem;
-      }
-
-      .message {
-        margin-top: 14px;
-        max-width: 350px;
-        font-size: 0.92rem;
-        line-height: 1.5;
-      }
-
-      .values {
-        margin-top: 18px;
-        font-size: 0.59rem;
-        letter-spacing: 1.1px;
-        white-space: nowrap;
-      }
-
-      .dot {
-        padding: 0 3px;
-      }
-
-      .coming {
-        margin-top: 22px;
-        padding: 11px 23px;
-        font-size: 0.68rem;
-        letter-spacing: 4px;
-      }
-
-      .horizon-container {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 26svh;
-        min-height: 150px;
-        overflow: hidden;
-      }
-
-      .horizon {
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%);
-        width: 150%;
-        min-width: 0;
-        max-width: none;
-        height: auto;
-      }
-
-      .footer {
-        bottom: 10px;
-        font-size: 0.62rem;
-      }
-    }
-
-    /* SHORT MOBILE SCREENS */
-
-    @media (max-width: 600px) and (max-height: 750px) {
-
-      .content {
-        padding-top: 15px;
-      }
-
-      .logo {
-        width: 38vw;
-        max-width: 165px;
-      }
-
-      .brand {
-        font-size: 2.7rem;
-      }
-
-      .tagline {
-        margin-top: 12px;
-        font-size: 1.05rem;
-      }
-
-      .message {
-        margin-top: 10px;
-        font-size: 0.82rem;
-      }
-
-      .values {
-        margin-top: 13px;
-        font-size: 0.53rem;
-      }
-
-      .coming {
-        margin-top: 15px;
-        padding: 9px 20px;
-      }
-
-      .horizon-container {
-        height: 24svh;
-      }
-    }
-
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050b17">
+<title>NabZap | Multi-Channel Online Retailer | Source • Sell • Grow</title>
+<meta name="description" content="NabZap is a multi-channel online retailer of toys, collectibles and seasonal gifts, based in Acworth, Georgia. We work with brands and distributors and sell on Amazon, Walmart Marketplace and eBay.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <main class="page">
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="logo.png" alt="NabZap logo"><span>NabZap</span></a>
+    <nav class="main">
+      <a href="#about">About</a>
+      <a href="#partners">For Brands &amp; Distributors</a>
+      <a href="#shop">Shop</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="content">
+<main id="top">
 
-      <img
-        src="Logo.png"
-        class="logo"
-        alt="NabZap logo"
-      >
-
-      <div class="brand">
-        <span class="nab">Nab</span><span class="zap">Zap</span>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="tagline">Source • Sell • Grow</div>
+      <h1>The online retail partner brands can trust with their name.</h1>
+      <p class="lead">NabZap sells toys, collectibles and seasonal gifts to customers across the United States through Amazon, Walmart Marketplace and eBay, with accurate listings, fair pricing and careful fulfilment.</p>
+      <div class="btns">
+        <a class="btn" href="#partners">Work with us</a>
+        <a class="btn ghost" href="#shop">See what we sell</a>
       </div>
-
-      <div class="tagline">
-        Opportunities. Fast action.
-      </div>
-
-      <div class="message">
-        We spot opportunities, act decisively,
-        and build for lasting value.
-      </div>
-
-      <div class="values">
-        SMART SOURCING
-        <span class="dot">•</span>
-        FAST ACTION
-        <span class="dot">•</span>
-        LASTING VALUE
-      </div>
-
-      <div class="coming">
-        COMING SOON
-      </div>
-
     </div>
+    <div class="orbit" aria-hidden="true"><i></i><i></i><img src="logo.png" alt=""></div>
+  </div>
+</div>
 
-    <!-- EARTH HORIZON -->
-    <div class="horizon-container">
-      <img
-        src="Hz.png"
-        class="horizon"
-        alt=""
-      >
+<div class="strip">
+  <div class="wrap">
+    <span>Multi-channel commerce</span>
+    <span>Strategic sourcing</span>
+    <span>Trusted partnerships</span>
+  </div>
+</div>
+
+<section id="about" class="band">
+  <div class="wrap">
+    <h2>Built on discipline, not shortcuts.</h2>
+    <div class="grid two">
+      <div>
+        <p>NABZAP LLC is a Georgia limited liability company founded in 2026 and based in Acworth, Georgia. We buy genuine, new products and sell them to customers online, on the marketplaces where they already shop.</p>
+        <p class="muted">Our founder, Hamed Jalalzada, spent more than 20 years in finance, compliance and global operations for an international humanitarian organization, managing large multi-country budgets, partner agreements, procurement and audits. NabZap is run the same way: documented sourcing, clean records and commitments that are kept.</p>
+        <p class="muted">We are a young company and we say so plainly. What we offer partners is care with their products, straight communication and a business built to grow steadily.</p>
+      </div>
+      <div>
+        <div class="statement">
+          <span class="label">Mission</span>
+          <p>NabZap sources quality products from trusted brands and suppliers and brings them to customers through accurate, reliable, multi-channel online retail.</p>
+        </div>
+        <div class="statement">
+          <span class="label">Vision</span>
+          <p>To grow NabZap into a trusted, scalable commerce company that brands and distributors choose as a partner and customers return to.</p>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <footer class="footer">
-      © 2026 NABZAP LLC
-    </footer>
+<section class="band lift">
+  <div class="wrap">
+    <h2>How we work</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Source</h3>
+        <p>We buy genuine products through legitimate supply channels and keep the paperwork for every purchase.</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Sell</h3>
+        <p>We list each product on the channel that suits it, with accurate titles, images and condition, then ship promptly and pack with care.</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Grow</h3>
+        <p>We reinvest in the products and supplier relationships that perform, and build long-term accounts in place of one-off buys.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  </main>
+<section id="partners" class="band">
+  <div class="wrap">
+    <h2>For brands and distributors: a retailer that protects your brand.</h2>
+    <p class="intro">We are opening wholesale accounts with brands and authorized distributors in toys, collectibles and seasonal gifts. Here is what you can expect from us.</p>
+    <div class="grid two">
+      <div class="panel">
+        <h3>Our commitments</h3>
+        <ul class="check">
+          <li><strong>Your pricing policy, followed.</strong> We honor minimum advertised price (MAP) and any channel restrictions you set.</li>
+          <li><strong>Accurate listings.</strong> We sell on your existing product pages and never create duplicate or altered listings.</li>
+          <li><strong>Genuine, new product only.</strong> Everything we sell is new, in original packaging, and bought through channels you approve.</li>
+          <li><strong>Careful fulfilment.</strong> Orders are packed to arrive in the condition your customers expect, and customer questions are answered promptly.</li>
+          <li><strong>Prompt payment and clear records.</strong> Purchase orders, invoices and payments are documented and on time.</li>
+        </ul>
+      </div>
+      <div class="panel plain">
+        <h3>Where we sell</h3>
+        <ul class="check short">
+          <li>Amazon</li>
+          <li>Walmart Marketplace</li>
+          <li>eBay</li>
+        </ul>
+        <h3 style="margin-top:28px">Available on request</h3>
+        <ul class="check short">
+          <li>Georgia resale certificate</li>
+          <li>Federal EIN and Form W-9</li>
+          <li>Georgia business registration</li>
+          <li>Links to our marketplace storefronts</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btns">
+      <a class="btn" href="mailto:hamed@nabzap.com?subject=Wholesale%20account%20inquiry">Email hamed@nabzap.com</a>
+    </div>
+  </div>
+</section>
 
+<section id="shop" class="band lift">
+  <div class="wrap">
+    <h2>What we sell</h2>
+    <p class="intro">A selection of what is in stock now. Orders are placed and paid for on the marketplace, which handles checkout, shipping updates and buyer protection.</p>
+    <div class="shelf">
+      <!-- To add a photo to a product, put the image file in this folder and add
+           <img src="your-photo.jpg" alt="Product name"> as the first line inside that product.
+           Use your own photos only. -->
+      <div class="product">
+        <span class="tag">Advent calendar</span>
+        <h3>Fuggler Advent Calendar</h3>
+        <p>24 days of funny-ugly Fuggler surprises. New, in original sealed packaging.</p>
+        <a class="btn ghost" href="https://www.ebay.com/itm/820211489363" target="_blank" rel="noopener">View on eBay</a>
+      </div>
+      <div class="product">
+        <span class="tag">Advent calendar</span>
+        <h3>ZURU My Mini Baby Sweetie Surprise Advent Calendar</h3>
+        <p>24 mini baby surprises for the holiday countdown. New, in original sealed packaging.</p>
+        <a class="btn ghost" data-link="zuruListing" target="_blank" rel="noopener" hidden>View listing</a>
+      </div>
+      <div class="product">
+        <span class="tag">Advent calendar</span>
+        <h3>Taba Squishy Advent Calendar</h3>
+        <p>24 soft, squeezable surprises, one for each day. New, in original sealed packaging.</p>
+        <a class="btn ghost" data-link="tabaListing" target="_blank" rel="noopener" hidden>View listing</a>
+      </div>
+      <div class="product">
+        <span class="tag">Squishy toys</span>
+        <h3>Squishy and sensory toys</h3>
+        <p>Squeezable novelty toys for kids and collectors, new in retail packaging.</p>
+      </div>
+      <div class="product">
+        <span class="tag">Collectibles</span>
+        <h3>Figures and collectibles</h3>
+        <p>Blind boxes, figures and small collectibles from well-known toy brands.</p>
+      </div>
+      <div class="product">
+        <span class="tag">Seasonal</span>
+        <h3>Seasonal gifts</h3>
+        <p>Holiday and gift items that change through the year.</p>
+      </div>
+    </div>
+    <div class="btns">
+      <a class="btn ghost" data-link="ebayStore" target="_blank" rel="noopener" hidden>Our eBay store</a>
+      <a class="btn ghost" data-link="walmartStore" target="_blank" rel="noopener" hidden>Our Walmart storefront</a>
+    </div>
+    <p class="note" style="margin-top:22px">Product and brand names belong to their owners. NabZap is an independent retailer.</p>
+  </div>
+</section>
+
+<section id="contact" class="band">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p class="intro">Hamed Jalalzada, Founder &amp; CEO, replies to supplier and partner inquiries within one business day.</p>
+    <ul class="contact-list">
+      <li><span class="k">Brands, distributors and wholesale</span><a href="mailto:hamed@nabzap.com">hamed@nabzap.com</a></li>
+      <li><span class="k">Customer support</span><a href="mailto:support@nabzap.com">support@nabzap.com</a></li>
+      <li data-show="phone" hidden><span class="k">Phone</span><a data-phone></a></li>
+      <li><span class="k">Location</span><span class="v">Acworth, Georgia, USA</span></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>© 2026 NABZAP LLC. All rights reserved.</div>
+    <div><a href="policies.html">Policies</a><a href="mailto:hamed@nabzap.com">hamed@nabzap.com</a></div>
+  </div>
+</footer>
+
+<script>
+/* SITE SETTINGS: fill these in, save, and upload. Anything left empty stays hidden. */
+var SETTINGS = {
+  phone: "",          // business phone, e.g. "(770) 555-0100"
+  ebayStore: "",      // link to your eBay store page
+  walmartStore: "",   // link to your Walmart seller storefront
+  zuruListing: "",    // link to your ZURU advent calendar listing
+  tabaListing: ""     // link to your Taba advent calendar listing
+};
+document.querySelectorAll("[data-link]").forEach(function (a) {
+  var url = SETTINGS[a.getAttribute("data-link")];
+  if (url) { a.href = url; a.hidden = false; }
+});
+if (SETTINGS.phone) {
+  var row = document.querySelector('[data-show="phone"]');
+  var link = row.querySelector("[data-phone]");
+  link.textContent = SETTINGS.phone;
+  link.href = "tel:" + SETTINGS.phone.replace(/[^0-9+]/g, "");
+  row.hidden = false;
+}
+</script>
 </body>
 </html>
