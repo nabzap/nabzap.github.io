@@ -263,3 +263,10 @@ nav.main a.nav-cta:hover, nav.main a.nav-cta[aria-current="page"] { border-color
 .faq summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .faq details p { color: var(--mist); margin: 0 0 20px; }
 .brand img { height: auto; }
+
+/* Company facts */
+.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; margin: 0; border-top: 1px solid var(--line-soft); }
+.facts > div { display: grid; grid-template-columns: 11em 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line-soft); }
+.facts dt { color: var(--mist); font-size: 0.95rem; }
+.facts dd { margin: 0; color: var(--ice); }
+@media (max-width: 860px) { .facts { grid-template-columns: 1fr; } .facts > div { grid-template-columns: 1fr; gap: 2px; } }
