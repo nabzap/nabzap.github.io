@@ -188,3 +188,35 @@ h1.page { font-size: clamp(1.8rem, 4.2vw, 3rem); max-width: 20em; }
 
 body { min-height: 100vh; display: flex; flex-direction: column; }
 main { flex: 1; }
+
+/* Home page scene: sunrise glow behind the logo, the earth at night below, trade routes from Georgia */
+.hero { padding-bottom: 150px; }
+.hero::before {
+  background:
+    radial-gradient(34% 44% at 84% 26%, rgba(255, 196, 92, 0.20), transparent 70%),
+    radial-gradient(60% 70% at 78% 45%, rgba(30, 72, 150, 0.42), transparent 70%);
+}
+.orbit::before {
+  content: ""; position: absolute; top: 9%; right: 13%; width: 44%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 236, 190, 0.95) 0%, rgba(255, 190, 80, 0.55) 16%, rgba(255, 170, 50, 0.16) 42%, transparent 68%);
+  filter: blur(6px);
+}
+.earth {
+  position: relative; margin-top: -170px; height: clamp(300px, 40vw, 620px); pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+}
+.earth svg { display: block; width: 100%; height: 100%; }
+.earth .route { fill: none; stroke: rgba(240, 200, 110, 0.38); stroke-width: 1.1; }
+.earth .pulse { fill: none; stroke: #ffe3a1; stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 9 91; stroke-dashoffset: 100; animation: travel 6.3s linear infinite; }
+.earth .dot { fill: #ffe3a1; }
+.earth .hubdot { fill: #fff6dc; }
+@keyframes travel { to { stroke-dashoffset: 0; } }
+.strip { position: relative; margin-top: -60px; background: rgba(5, 11, 23, 0.72); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.hero .wrap { z-index: 2; }
+@media (max-width: 860px) {
+  .hero { padding-bottom: 120px; }
+  .earth { height: 78vw; margin-top: -120px; }
+  .strip { margin-top: -30px; }
+}
+@media (prefers-reduced-motion: reduce) { .earth .pulse { animation: none; stroke-dashoffset: 55; } }
