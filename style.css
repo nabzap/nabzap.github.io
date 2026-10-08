@@ -270,3 +270,6 @@ nav.main a.nav-cta:hover, nav.main a.nav-cta[aria-current="page"] { border-color
 .facts dt { color: var(--mist); font-size: 0.95rem; }
 .facts dd { margin: 0; color: var(--ice); }
 @media (max-width: 860px) { .facts { grid-template-columns: 1fr; } .facts > div { grid-template-columns: 1fr; gap: 2px; } }
+
+.product .supplier { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line-soft); width: 100%; color: var(--ice); font-size: 0.95rem; }
+.product .supplier span { display: block; color: var(--mist); font-size: 0.82rem; margin-bottom: 2px; }
