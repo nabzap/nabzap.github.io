@@ -26,3 +26,17 @@ document.documentElement.classList.add("js");
     btn.setAttribute("aria-expanded", open ? "true" : "false");
   });
 })();
+
+/* Analytics: count clicks on email and phone links (no addresses or numbers are sent) */
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="mailto:"], a[href^="tel:"]');
+  if (!a || typeof gtag !== "function") return;
+  var isPhone = a.getAttribute("href").indexOf("tel:") === 0;
+  var inbox = "";
+  if (!isPhone) inbox = a.getAttribute("href").indexOf("partners@") > -1 ? "partners" : "support";
+  gtag("event", "generate_lead", {
+    method: isPhone ? "phone" : "email",
+    inbox: inbox,
+    page: location.pathname
+  });
+});
