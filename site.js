@@ -1,7 +1,6 @@
 /* SITE SETTINGS: fill these in, save, and upload. Anything left empty stays hidden. */
 var SETTINGS = {
-  phone: "(770) 913-6650", // business phone
-  walmartStore: ""    // link to your Walmart seller storefront
+  phone: "(770) 913-6650" // business phone
 };
 document.querySelectorAll("[data-link]").forEach(function (a) {
   var url = SETTINGS[a.getAttribute("data-link")];
